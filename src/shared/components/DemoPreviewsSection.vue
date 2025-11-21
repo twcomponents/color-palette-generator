@@ -14,7 +14,7 @@
   <!-- Demo Hover Hint -->
   <ColorHint
     :position="colorHintPosition"
-    :isVisible="isColorHintVisible"
+    :is-visible="isColorHintVisible"
     :hints="colorHints"
   />
 </template>

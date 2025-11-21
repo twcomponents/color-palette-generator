@@ -4,11 +4,11 @@
     aria-label="Toggle theme"
     @click="toggleTheme()"
   >
-    <Moon class="size-5 text-white" v-if="themeMode === ThemeMode.DARK" />
-    <Sun class="size-5 text-black" v-if="themeMode === ThemeMode.LIGHT" />
+    <Moon v-if="themeMode === ThemeMode.DARK" class="size-5 text-white" />
+    <Sun v-if="themeMode === ThemeMode.LIGHT" class="size-5 text-black" />
     <MonitorSmartphone
-      class="size-5 text-black dark:text-white"
       v-if="themeMode === ThemeMode.SYSTEM"
+      class="size-5 text-black dark:text-white"
     />
   </button>
 </template>

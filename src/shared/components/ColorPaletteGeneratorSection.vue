@@ -56,8 +56,8 @@
           <!-- Primary Color Picker -->
           <ColorBar
             ref="colorPickerRef"
-            :pureColor="primary"
-            :pickerIndex="0"
+            :pure-color="primary"
+            :picker-index="0"
             @change="onColorChange($event)"
           />
 
@@ -65,8 +65,8 @@
           <template v-if="secondaryColorPalette !== null">
             <ColorBar
               ref="secondaryColorPickerRef"
-              :pureColor="secondary"
-              :pickerIndex="1"
+              :pure-color="secondary"
+              :picker-index="1"
               @change="onSecondaryColorChange($event)"
               @close="resetSecondaryColorPalette()"
             />
@@ -76,9 +76,9 @@
         <!-- Reveal Secondary Color -->
         <div class="justify-center hidden mt-2 md:flex">
           <button
+            v-if="secondaryColorPalette === null"
             class="flex items-center gap-1 p-4 cursor-pointer text-color-muted-extra"
             @click="addSecondaryColor()"
-            v-if="secondaryColorPalette === null"
           >
             <Plus class="size-5" />
             Add secondary color
@@ -91,17 +91,17 @@
     <div class="flex flex-col gap-5">
       <!-- Primary Color Palette -->
       <ColorPalette
-        :colorPalette="colorPalette"
-        :colorName="colorName"
-        :themeVariableKey="ColorVariableTheme.TWC_THEME"
+        :color-palette="colorPalette"
+        :color-name="colorName"
+        :theme-variable-key="ColorVariableTheme.TWC_THEME"
       />
 
       <!-- Secondary Color Palette -->
       <ColorPalette
-        :colorPalette="secondaryColorPalette"
-        :colorName="secondaryColorName"
-        :themeVariableKey="ColorVariableTheme.TWC_THEME2"
         v-if="secondaryColorPalette !== null"
+        :color-palette="secondaryColorPalette"
+        :color-name="secondaryColorName"
+        :theme-variable-key="ColorVariableTheme.TWC_THEME2"
       />
     </div>
   </section>

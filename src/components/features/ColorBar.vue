@@ -10,31 +10,31 @@
       >
         <!-- Color Picker -->
         <color-picker
+          v-model:pure-color="pureColor"
           shape="circle"
-          v-model:pureColor="pureColor"
-          pickerType="chrome"
+          picker-type="chrome"
           format="hex"
-          @pureColorChange="onPureColorChange()"
+          @pure-color-change="onPureColorChange()"
         />
       </div>
 
       <!-- Color Input -->
       <input
-        type="text"
         v-model="pureColor"
+        type="text"
+        maxlength="7"
+        placeholder="Enter hex code"
+        class="border-none dark:bg-zinc-950 font-thin outline-none text-center"
         @change="onColorInputChange()"
         @input="onColorInputChange()"
-        placeholder="Enter hex code"
-        maxlength="7"
-        class="border-none dark:bg-zinc-950 font-thin outline-none text-center"
       />
 
       <!-- Right -->
       <div class="flex flex-row items-center">
         <button
           class="border border-zinc-300 dark:border-zinc-700 p-2.5 rounded-full dark:bg-zinc-900 dark:hover:bg-zinc-800 hover:scale-110 transition duration-300 ease-in-out"
-          @click="generateRandomColor()"
           data-tippy-content="Generate random color"
+          @click="generateRandomColor()"
         >
           <Shuffle :size="14" />
         </button>
@@ -55,9 +55,9 @@
 
     <!-- Close -->
     <button
+      v-if="pickerIndex > 0"
       class="absolute top-4 -right-5 w-1/12 px-3 hover:scale-110"
       @click="onCloseClick()"
-      v-if="pickerIndex > 0"
     >
       <CircleX class="dark:text-zinc-500 dark:hover:text-zinc-300" />
     </button>

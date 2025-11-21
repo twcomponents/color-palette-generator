@@ -44,8 +44,8 @@
                 <span>Export your color palette as:</span>
 
                 <input
-                  type="search"
                   v-model="colorName"
+                  type="search"
                   placeholder="Enter palette name"
                   class="dark:bg-zinc-950 font-thin outline-none border-b border-gray-200 dark:border-zinc-600 focus:border-gray-400 dark:focus:border-zinc-500 text-base px-2.5 py-2 w-[300px]"
                 />
@@ -99,10 +99,10 @@
                   <div id="export-editor" class="w-[500px] h-[500px]"></div>
 
                   <button
-                    @click="onPaletteOutputCopyClick()"
                     class="absolute right-4 -bottom-2 flex flex-row items-center justify-center size-10 bg-white dark:bg-zinc-950 border border-gray-300 hover:border-gray-500 dark:border-zinc-700 p-2 rounded-md text-zinc-400 hover:text-zinc-500 dark:hover:border-zinc-500 dark:text-zinc-500 dark:hover:text-zinc-400 transition-all duration-200 ease-in-out"
+                    @click="onPaletteOutputCopyClick()"
                   >
-                    <Copy :size="20" v-if="!isOutputCopied" />
+                    <Copy v-if="!isOutputCopied" :size="20" />
 
                     <span v-else>👍</span>
                   </button>
@@ -116,13 +116,16 @@
 
     <!-- Color Palette -->
     <div
-      class="flex flex-row flex-wrap gap-3 justify-center text-xs"
       v-if="props.colorPalette.length > 0"
+      class="flex flex-row flex-wrap gap-3 justify-center text-xs"
     >
-      <template v-for="paletteColor in props.colorPalette">
+      <template
+        v-for="paletteColor in props.colorPalette"
+        :key="paletteColor.label"
+      >
         <ColorButton
-          :paletteColor="paletteColor"
-          :themeVariableKey="props.themeVariableKey"
+          :palette-color="paletteColor"
+          :theme-variable-key="props.themeVariableKey"
         />
       </template>
     </div>
