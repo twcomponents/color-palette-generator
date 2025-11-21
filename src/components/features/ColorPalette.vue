@@ -179,12 +179,12 @@
   const colorName = ref<string>(props.colorName.name);
   const exportOptions: IExportOption[] = [
     {
-      label: 'Tailwind (HEX)',
+      label: 'Tailwind 3 (HEX)',
       value: 'tailwind_hex',
       language: 'javascript',
     },
     {
-      label: 'Tailwind (CSS Var.)',
+      label: 'Tailwind 3 (CSS Var.)',
       value: 'tailwind_css_var',
       language: 'html',
     },
