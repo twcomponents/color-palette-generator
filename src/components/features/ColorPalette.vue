@@ -328,7 +328,7 @@
   /**
    * Hex color decorator for monaco editor
    */
-  const decorateHexColors = (editor: editor.IStandaloneCodeEditor) => {
+  const decorateHexColors = (editor: monaco.editor.IStandaloneCodeEditor) => {
     const model = editor?.getModel();
     if (!model) return;
 
@@ -340,6 +340,10 @@
       usedColors = new Set();
 
     for (const match of matches) {
+      if (match.index == null) {
+        continue;
+      }
+
       const hex = match[0];
 
       let color =
