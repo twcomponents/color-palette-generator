@@ -74,7 +74,7 @@
                       class="group flex flex-row gap-2 items-center px-3 py-2 select-none border hover:bg-gray-100/70 dark:hover:bg-zinc-900 cursor-pointer rounded-md transition-all duration-200 ease-in-out"
                       :class="[
                         option.value === selectedExportOption.value
-                          ? `border-${themeVariableKey}-200`
+                          ? `border-gray-200`
                           : 'border-transparent',
                       ]"
                       @click="onExportOptionClick(option)"
