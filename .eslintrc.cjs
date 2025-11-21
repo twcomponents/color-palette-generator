@@ -1,4 +1,11 @@
 module.exports = {
+  parser: 'vue-eslint-parser',
+  parserOptions: {
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    extraFileExtensions: ['.vue'],
+  },
   extends: [
     // add more generic rulesets here, such as:
     // 'eslint:recommended',
