@@ -1,7 +1,7 @@
 <template>
   <!-- Demos -->
   <section
-    class="relative flex flex-col w-full py-10 border-t border-gray-800"
+    class="relative flex flex-col w-full py-10 border-t border-gray-200"
     @mousemove="onDemoAreaMouseMove($event)"
     @mouseleave="onDemoAreaMouseLeave()"
   >

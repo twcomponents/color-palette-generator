@@ -1,6 +1,8 @@
 <template>
   <!-- Palette -->
-  <div class="flex flex-col gap-3 container w-12/12 lg:w-10/12">
+  <div
+    class="flex flex-col gap-3 container w-12/12 lg:w-10/12 max-w-5xl mx-auto"
+  >
     <!-- Header -->
     <div class="flex flex-row gap-2 items-center justify-between px-2">
       <!-- Title -->
