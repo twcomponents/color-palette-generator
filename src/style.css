@@ -16,7 +16,7 @@
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
 
-  // Theme1
+  /* Theme1 */
   --twc-theme-50: #fef9ee;
   --twc-theme-100: #fcf2d8;
   --twc-theme-200: #f8e2b0;
@@ -48,7 +48,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    // Theme2
+    /* Theme2 */
     --twc-theme2-50: #fff;
     --twc-theme2-100: #fff;
     --twc-theme2-200: #fff;
