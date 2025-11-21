@@ -34,6 +34,7 @@
   "devDependencies": {
     "@types/lodash": "^4.17.16",
     "@types/nearest-color": "^0.4.1",
+    "@typescript-eslint/parser": "^8.47.0",
     "@vitejs/plugin-vue": "^5.2.3",
     "autoprefixer": "^10.4.21",
     "eslint": "^8.57.1",
