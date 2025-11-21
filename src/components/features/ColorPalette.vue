@@ -65,15 +65,20 @@
               <div class="flex flex-row gap-2">
                 <!-- Left -->
                 <div class="flex flex-col items-center">
-                  <ul class="flex flex-col gap-2">
+                  <ul class="flex flex-col gap-1.5">
                     <li
                       v-for="option in exportOptions"
                       :key="option.value"
-                      class="group flex flex-row gap-2 items-center px-3 py-2 select-none hover:bg-gray-200 dark:hover:bg-zinc-900 cursor-pointer rounded-md"
+                      class="group flex flex-row gap-2 items-center px-3 py-2 select-none border hover:bg-gray-100/70 dark:hover:bg-zinc-900 cursor-pointer rounded-md transition-all duration-200 ease-in-out"
+                      :class="[
+                        option.value === selectedExportOption.value
+                          ? `border-${themeVariableKey}-200`
+                          : 'border-transparent',
+                      ]"
                       @click="onExportOptionClick(option)"
                     >
                       <div
-                        class="size-3 rounded-full border border-gray-300 group-hover:border-gray-400 dark:border-zinc-600 dark:group-hover:border-zinc-500"
+                        class="size-3 rounded-full border border-gray-300 group-hover:border-gray-400 dark:border-zinc-600 dark:group-hover:border-zinc-500 transition-all duration-200 ease-in-out"
                         :class="[
                           option.value === selectedExportOption.value &&
                             `bg-${themeVariableKey}-500`,
@@ -90,8 +95,8 @@
                 </div>
 
                 <!-- Right -->
-                <div class="relative flex flex-col items-center pl-4">
-                  <div id="export-editor" class="w-[500px] h-96"></div>
+                <div class="relative flex flex-col items-center">
+                  <div id="export-editor" class="w-[500px] h-[500px]"></div>
 
                   <button
                     @click="onPaletteOutputCopyClick()"
